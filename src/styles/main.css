@@ -2,6 +2,15 @@
 /* =================================
    1. DESIGN TOKENS
 ================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
 
 :root {
     /* Brand colours */
@@ -10,7 +19,7 @@
 
     /* Neutral colours */
     --color-background: #E9E5D8;
-    --color-text: #164E48;
+    --color-text: #2c3231;
     --color-white: #FFFFFF;
 
     /* Typography */
@@ -139,21 +148,14 @@ p {
     }
 }
 
-/* Tablet: 810px - 1199px */
-@media (min-width: 810px) {
+/* Tablet: 810px - 1439px */
+@media (min-width: 810px) and (max-width: 1439px) {
     :root {
         --page-padding: 5%;
     }
 }
 
-/* Desktop: 1200px - 1439px */
-@media (min-width: 1200px) {
-    :root {
-        --page-padding: 6%;
-    }
-}
-
-/* Desktop LG: 1440px and above */
+/* Desktop: 1440px and above */
 @media (min-width: 1440px) {
     :root {
         --page-padding: 0px;

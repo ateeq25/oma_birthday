@@ -1,0 +1,217 @@
+
+.many-colours {
+    background-color: var(--color-background);
+    padding-block: 8rem;
+}
+
+.many-colours__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.many-colours__heading {
+    max-width: 680px;
+}
+
+.many-colours__number {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.many-colours__title {
+    margin-bottom: 1.5rem;
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--color-primary);
+}
+
+.many-colours__title span {
+    display: block;
+    color: var(--color-secondary);
+}
+
+.many-colours__intro {
+    max-width: 520px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* Feature layout */
+
+.many-colours__features {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 6rem;
+}
+
+.feature__image {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(22, 78, 72, 0.08);
+}
+
+.feature__image--artist {
+    aspect-ratio: 4 / 5;
+}
+
+.feature__image--healer {
+    aspect-ratio: 4 / 5;
+}
+
+.feature__image--gem-keeper {
+    aspect-ratio: 4 / 5;
+}
+
+.feature__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature__content {
+    max-width: 440px;
+}
+
+.feature__number {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.feature__title {
+    margin-bottom: 0.75rem;
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-primary);
+}
+
+.feature__subtitle {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.feature__description {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--color-text);
+}
+
+/* Alternate feature composition */
+
+
+.feature--gem-keeper {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.feature--gem-keeper .feature__image {
+    order: 2;
+}
+
+.feature--gem-keeper .feature__content {
+    order: 1;
+    justify-self: end;
+}
+
+/* Tablet */
+
+@media (min-width: 810px) and (max-width: 1439px) {
+    .many-colours {
+        padding-block: 6rem;
+    }
+    
+    .many-colours__intro {
+        font-size: 1.2rem;
+    }
+
+    .many-colours__features {
+        gap: 6rem;
+    }
+
+    .feature {
+        gap: 3rem;
+    }
+    .feature__description {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+    .feature__number {
+        font-size: 1.1rem;
+    }
+
+    .many-colours__number {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 809px) {
+    .many-colours {
+        padding-block: 5rem;
+    }
+
+    .many-colours__container {
+        gap: 4rem;
+    }
+
+    .many-colours__features {
+        gap: 5rem;
+    }
+
+    .feature,
+    .feature--healer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .feature--healer .feature__image {
+        order: 1;
+    }
+
+    .feature--healer .feature__content {
+        order: 2;
+        justify-self: start;
+    }
+
+    .feature__content {
+        max-width: 100%;
+    }
+
+    .feature__image--artist,
+    .feature__image--healer,
+    .feature__image--gem-keeper {
+        aspect-ratio: 5 / 4;
+    }
+
+    .feature--gem-keeper .feature__image {
+        order: 1;
+    }
+
+    .feature--gem-keeper .feature__content {
+        order: 2;
+        justify-self: start;
+    }
+}

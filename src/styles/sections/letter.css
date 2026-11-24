@@ -1,0 +1,193 @@
+
+/* =================================
+   LETTER SECTION
+================================= */
+
+.letter {
+    position: relative;
+    isolation: isolate;
+    background-color: #E9E5D8;
+    padding-block: 8rem;
+    overflow: hidden;
+}
+
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--letter-paper-image);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.letter__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6rem;
+    align-items: start;
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.letter__heading {
+    position: sticky;
+    top: 5rem;
+}
+
+.letter__number {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.letter__title {
+    max-width: 550px;
+    color: var(--color-primary);
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.letter__title span {
+    display: block;
+    font-style: italic;
+    color: var(--color-secondary);
+}
+
+
+/* =================================
+   LETTER CONTENT
+================================= */
+
+.letter__body {
+    position: relative;
+    padding-top: 3rem;
+}
+
+.letter__quote-mark {
+    display: block;
+    color: var(--color-secondary);
+    font-family: var(--font-display);
+    font-size: 7rem;
+    line-height: 0.6;
+    margin-bottom: 2rem;
+}
+
+.letter__content {
+    max-width: 540px;
+}
+
+.letter__content p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.letter__content .letter__greeting {
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+
+
+/* =================================
+   SIGNATURE
+================================= */
+
+.letter__signature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    color: var(--color-primary);
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.letter__signature-heart {
+    color: var(--color-secondary);
+    font-family: sans-serif;
+    font-size: 1.25rem;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (min-width: 810px) and (max-width: 1439px) {
+    .letter {
+        padding-block: 6rem;
+    }
+
+    .letter__container {
+        column-gap: 3rem;
+    }
+
+    .letter__title {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+    }
+
+    .letter__content p {
+        font-size: 1.1rem;
+    }
+
+    .letter__number{
+        font-size: 1rem;
+    }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 809px) {
+    .letter {
+        padding-block: 5rem;
+    }
+
+    .letter__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .letter__heading {
+        position: static;
+    }
+
+    .letter__number {
+        margin-bottom: 1.5rem;
+    }
+
+    .letter__title {
+        font-size: clamp(3.2rem, 12vw, 4.5rem);
+    }
+
+    .letter__body {
+        padding-top: 0;
+    }
+
+    .letter__quote-mark {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .letter__content p {
+        font-size: 0.95rem;
+    }
+}

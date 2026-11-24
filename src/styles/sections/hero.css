@@ -1,0 +1,255 @@
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding-block: 2rem;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    var(--hero-background-image);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.hero__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero__date,
+.hero__nav-links a {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__date {
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.hero__date:hover {
+  color: var(--color-secondary);
+}
+
+.hero__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.hero__nav-links a {
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.hero__nav-links a:hover {
+  color: var(--color-secondary);
+}
+
+/* =================================
+   HERO CONTENT
+================================= */
+
+.hero__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 4rem;
+  text-align: center;
+}
+
+.hero__text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* =================================
+   HERO TYPOGRAPHY
+================================= */
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.hero__title-intro {
+  color: var(--color-white);
+  font-size: clamp(3vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.hero__title-name {
+  margin-top: 0.15em;
+  color: var(--color-white);
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-style: italic;
+  letter-spacing: -0.06em;
+}
+
+.hero__description {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  color: var(--color-white);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* =================================
+   TURN THE PAGE LINK
+================================= */
+
+.hero__turn-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 2rem;
+  color: var(--color-white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  transition: color var(--transition-fast);
+}
+
+.hero__turn-page span {
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.hero__turn-page:hover {
+  color: var(--color-secondary);
+}
+
+.hero__turn-page:hover span {
+  transform: translateY(3px);
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .hero {
+    background-position: center 15%;
+  }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (min-width: 810px) and (max-width: 1439px) {
+  .hero__nav-links {
+    gap: 2rem;
+  }
+  .hero__date,
+  .hero__nav-links a {
+    font-size: 0.9rem;
+  }
+  .hero__title-intro {
+    font-size: clamp(1rem, 4vw, 3.5rem);
+  }
+
+  .hero__title-name {
+    font-size: clamp(8rem, 9vw, 8rem);
+  }
+
+  .hero__description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 520px;
+  }
+
+  .hero__content {
+    padding-block: 5rem;
+  }
+
+  .hero__turn-page {
+    font-size: 1rem;}
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 809px) {
+  .hero {
+    min-height: 100svh;
+    padding-block: 1.5rem;
+    background-position: center;
+  }
+
+  .hero__container {
+    min-height: calc(100svh - 3rem);
+  }
+
+  /* Navigation */
+
+  .hero__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hero__date,
+  .hero__nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .hero__nav-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  /* Content */
+
+  .hero__content {
+    padding-block: 3rem;
+  }
+
+  /* Typography */
+
+  .hero__title-intro {
+    font-size: clamp(6vw, 2.2rem);
+  }
+
+  .hero__title-name {
+    font-size: clamp(4.5rem, 17vw, 6rem);
+  }
+
+  .hero__description {
+    max-width: 450px;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .hero__turn-page {
+    margin-top: 1.5rem;
+  }
+}

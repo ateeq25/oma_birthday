@@ -1,0 +1,193 @@
+
+.finale {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding-block: 7rem 2rem;
+}
+
+.finale__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.finale__main {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: 6rem;
+    min-height: 550px;
+}
+
+.finale__content {
+    max-width: 560px;
+}
+
+.finale__title {
+    display: flex;
+    flex-direction: column;
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 0.95;
+    margin: 0 0 2rem;
+}
+
+.finale__title span {
+    color: var(--color-secondary);
+}
+
+.finale__message {
+    max-width: 450px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+}
+
+.finale__signature {
+    font-family: "Caveat", cursive;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: rgba(233, 229, 216, 0.8);
+    margin: 0;
+}
+
+.finale__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-white);
+    color: var(--color-background);
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: gap 250ms ease;
+}
+
+.finale__cta span {
+    color: var(--color-white);
+    font-size: 0.8rem;
+}
+
+.finale__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.finale__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+
+.finale__footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 70px;
+    border-top: 1px solid rgba(233, 229, 216, 0.25);
+    padding-top: 1.5rem;
+}
+
+.finale__footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: rgba(233, 229, 216, 0.75);
+    margin: 0;
+    white-space: nowrap;
+}
+
+.finale__back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-background);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.finale__back-to-top span {
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+}
+
+.finale__back-to-top:hover {
+    color: var(--color-secondary);
+}
+
+/* Tablet */
+
+@media (min-width: 810px) and (max-width: 1439px) {
+    .finale__main {
+        gap: 3rem;
+    }
+
+    .finale__title {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 809px) {
+    .finale {
+        padding-block: 5rem 1.5rem;
+    }
+
+    .finale__container {
+        gap: 4rem;
+    }
+
+    .finale__main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: auto;
+    }
+
+    .finale__title {
+        font-size: clamp(3.5rem, 12vw, 5rem);
+    }
+
+    .finale__message {
+        font-size: 1rem;
+    }
+
+    .finale__signature {
+        font-size: 1.6rem;
+    }
+
+    .finale__image {
+        max-width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+
+    .finale__footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.25rem;
+        padding-top: 1.5rem;
+    }
+
+    .finale__footer-center {
+        position: static;
+        transform: none;
+        order: 2;
+        font-size: 0.75rem;
+    }
+
+    .finale__back-to-top {
+        order: 1;
+        font-size: 0.8rem;
+    }
+}
