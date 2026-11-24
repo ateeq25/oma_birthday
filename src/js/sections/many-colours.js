@@ -15,14 +15,16 @@ export default function createManyColours() {
                 <span class="many-colours__number"></span>
 
                 <h2 class="many-colours__title">
-                    A woman of
-                    <span>many beautiful things.</span>
+                    Is there really anything
+                    <span>you can't do?</span>
                 </h2>
 
                 <p class="many-colours__intro">
-                    There is never just one way to describe a person.
-                    Sometimes, the most beautiful things about someone
-                    are found in all the different sides they carry.
+                    A freaking talented artist!, a businesswoman, and so much more. 
+                    I'm genuinely impressed by how many different sides you 
+                    have and how much of yourself you bring to each one. 
+                    You're almost like a superhero with an unusually interesting 
+                    set of superpowers.
                 </p>
             </div>
 
@@ -43,10 +45,9 @@ export default function createManyColours() {
                         <span class="feature__number">01</span>
                         <h3 class="feature__title">The Artist</h3>
                         <p class="feature__description">
-                            A creative soul who finds ways to turn thoughts,
-                            feelings, and little observations into something
-                            beautiful. There's something special about the
-                            way she brings ideas to life through her art.
+                            If I could paint like you, I genuinely would stop speaking
+                            and just paint everything I wanted to say. Your talent is a gift, 
+                            and the world is lucky to have it. 
                         </p>
                     </div>
                 </article>
@@ -67,10 +68,11 @@ export default function createManyColours() {
                         <span class="feature__number">02</span>
                         <h3 class="feature__title">The Gem Keeper</h3>
                         <p class="feature__description">
-                            The mind and passion behind The Gem Shop.
-                            A reminder that her creativity doesn't end
-                            with a paintbrush; it also shows in the
-                            things she builds and shares with the world.
+                            I never really thought about it until now but one of the reasons
+                            I'm a fan of The Gem Shop is because it's how I got to meet you.
+                            I still remember the day you ranted about how your customers were stressing you
+                            so much😂. I'm proud of how much your brand has growwn and I'll be supporting
+                            you every step ofthe way.
                         </p>
                     </div>
                 </article>

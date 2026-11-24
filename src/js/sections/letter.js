@@ -30,24 +30,23 @@ export default function createLetter() {
 
                     <div class="letter__body-content">
                         <p>
-                            There's something quite special about people who
-                            make room for so many things in themselves. People
-                            who create, listen, nurture, build, and still find
-                            ways to make the world around them a little more
-                            beautiful.
+                            I'm sure you can agree this is a significant upgrade from the email🤭. 
+                            I was going to find your other email but somehow I did this instead. 
+                            Would've been much easier to find the email but here we are.
                         </p>
 
                         <p>
-                            I hope you never lose the curiosity that makes you
-                            explore, the creativity that makes you create, or
-                            the kindness that makes people feel seen and heard.
+                            We've known each other for over two years now, and I must say I really 
+                            am glad our paths crossed. I could write 26 paragraphs in this letter but 
+                            nothing I say would be news to your ears. Instead of writing, I decided to 
+                            show you and remind you of the amazing person you are, and why today is an 
+                            important day!
                         </p>
 
                         <p>
-                            Today is a reminder to celebrate the person behind
-                            all those things. Not just what you do, but who you
-                            are. Your many interests, your different sides, and
-                            all the little things that make you uniquely you.
+                            I hope you never lose the curiosity that makes you wander, the creativity that 
+                            makes you create, or the kindness that makes people feel seen and heard.
+                            (Yes I'm also shocked I wrote this, knowing the condition of your heart👀)
                         </p>
 
                         <p>
@@ -75,18 +74,18 @@ export default function createLetter() {
         </div>
     `;
 
-    const title = letter.querySelector(".letter__title");
-const greeting = letter.querySelector(".letter__greeting");
-const bodyContent = letter.querySelector(".letter__body-content");
+  const title = letter.querySelector(".letter__title");
+  const greeting = letter.querySelector(".letter__greeting");
+  const bodyContent = letter.querySelector(".letter__body-content");
 
-const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-).matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-if (prefersReducedMotion) {
+  if (prefersReducedMotion) {
     title.classList.add("is-visible");
     bodyContent.classList.add("is-visible");
-} else {
+  } else {
     // Prepare the greeting for the typing effect
     const greetingText = greeting.textContent.trim().replace(/\s+/g, " ");
     greeting.textContent = "";
@@ -94,56 +93,56 @@ if (prefersReducedMotion) {
     const characters = Array.from(greetingText);
 
     const spans = characters.map((character) => {
-        const span = document.createElement("span");
+      const span = document.createElement("span");
 
-        span.classList.add("letter__typing-char");
-        span.textContent = character === " " ? "\u00A0" : character;
+      span.classList.add("letter__typing-char");
+      span.textContent = character === " " ? "\u00A0" : character;
 
-        greeting.appendChild(span);
+      greeting.appendChild(span);
 
-        return span;
+      return span;
     });
 
     // Start the typing effect
     function startTyping() {
-        let index = 0;
+      let index = 0;
 
-        function typeNextCharacter() {
-            if (index >= spans.length) {
-                // Reveal the remaining letter after typing finishes
-                bodyContent.classList.add("is-visible");
-                return;
-            }
-
-            spans[index].classList.add("is-visible");
-            index++;
-
-            setTimeout(typeNextCharacter, 75);
+      function typeNextCharacter() {
+        if (index >= spans.length) {
+          // Reveal the remaining letter after typing finishes
+          bodyContent.classList.add("is-visible");
+          return;
         }
 
-        typeNextCharacter();
+        spans[index].classList.add("is-visible");
+        index++;
+
+        setTimeout(typeNextCharacter, 75);
+      }
+
+      typeNextCharacter();
     }
 
     // Observe the section
     const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    title.classList.add("is-visible");
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            title.classList.add("is-visible");
 
-                    startTyping();
+            startTyping();
 
-                    observer.disconnect();
-                }
-            });
-        },
-        {
-            threshold: 0.2,
-        }
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      },
     );
 
     observer.observe(letter);
-}
+  }
 
   return letter;
 }
