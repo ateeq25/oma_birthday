@@ -13,7 +13,7 @@
 }
 
 .moments__title {
-    max-width: 1100px;
+    max-width: 1400px;
     font-family: "Instrument Serif", serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 400;
@@ -126,5 +126,69 @@
     .moments__photo--4,
     .moments__photo--7 {
         transform: translateY(1rem) rotate(3deg);
+    }
+}
+
+@keyframes momentsFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section title */
+
+.moments__title {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.moments__title.is-visible {
+    animation: momentsFadeUp 900ms ease forwards;
+}
+
+/* Polaroid photographs */
+
+.moments__photo {
+    opacity: 0;
+    transform: translateY(35px) rotate(0deg);
+}
+
+.moments__photo.is-visible {
+    animation: momentsPhotoReveal 800ms ease forwards;
+}
+
+@keyframes momentsPhotoReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--photo-rotation));
+    }
+}
+
+.moments__photo--1 { --photo-rotation: -3deg; }
+.moments__photo--2 { --photo-rotation: 2deg; }
+.moments__photo--3 { --photo-rotation: -2deg; }
+.moments__photo--4 { --photo-rotation: 4deg; }
+.moments__photo--5 { --photo-rotation: 3deg; }
+.moments__photo--6 { --photo-rotation: -4deg; }
+.moments__photo--7 { --photo-rotation: 2deg; }
+.moments__photo--8 { --photo-rotation: -3deg; }
+
+@media (prefers-reduced-motion: reduce) {
+    .moments__title,
+    .moments__photo {
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
 }

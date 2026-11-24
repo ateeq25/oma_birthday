@@ -26,7 +26,7 @@ export default function createFinale() {
                     </p>
 
                     <a href="#letter" class="finale__cta">
-                        Read your birthday letter again
+                        READ YOUR BIRTHDAY LETTER AGAIN
                         <span aria-hidden="true">↗</span>
                     </a>
                 </div>
@@ -50,5 +50,36 @@ export default function createFinale() {
         </div>
     `;
 
+    const content = section.querySelector(".finale__content");
+const image = section.querySelector(".finale__image");
+const footer = section.querySelector(".finale__footer");
+
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+    content.classList.add("is-visible");
+    image.classList.add("is-visible");
+    footer.classList.add("is-visible");
+} else {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+        }
+    );
+
+    observer.observe(content);
+    observer.observe(image);
+    observer.observe(footer);
+}
     return section;
 }

@@ -102,5 +102,40 @@ export default function createManyColours() {
         </div>
     `;
 
+    const heading = section.querySelector(".many-colours__heading");
+const features = section.querySelectorAll(".feature");
+
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+    heading.classList.add("is-visible");
+
+    features.forEach((feature) => {
+        feature.classList.add("is-visible");
+    });
+} else {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+        }
+    );
+
+    observer.observe(heading);
+
+    features.forEach((feature) => {
+        observer.observe(feature);
+    });
+}
+
   return section;
 }

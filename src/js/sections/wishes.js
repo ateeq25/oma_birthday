@@ -31,6 +31,41 @@ export default function createWishes() {
             </div>
         </div>
     `;
+    const title = section.querySelector(".wishes__title");
+const wishItems = section.querySelectorAll(".wishes__item");
+
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+    title.classList.add("is-visible");
+
+    wishItems.forEach((item) => {
+        item.classList.add("is-visible");
+    });
+} else {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+        }
+    );
+
+    observer.observe(title);
+
+    wishItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 180}ms`;
+        observer.observe(item);
+    });
+}
 
     return section;
 }

@@ -28,7 +28,7 @@ export default function createMoments() {
     section.innerHTML = `
         <div class="container moments__container">
             <h2 class="moments__title">
-                Moments worth remembering<span>.</span>
+                A glimpse of your world from my view<span>.</span>
             </h2>
 
             <div class="moments__gallery">
@@ -46,6 +46,40 @@ export default function createMoments() {
             </div>
         </div>
     `;
+
+    const title = section.querySelector(".moments__title");
+const photoElements = section.querySelectorAll(".moments__photo");
+
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+    title.classList.add("is-visible");
+
+    photoElements.forEach((photo) => {
+        photo.classList.add("is-visible");
+    });
+} else {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    observer.observe(title);
+
+    photoElements.forEach((photo, index) => {
+    photo.style.animationDelay = `${index * 120}ms`;
+    observer.observe(photo);
+});
+}
 
     return section;
 }

@@ -29,14 +29,13 @@ export default function createHero() {
                 <div class="hero__text">
                     <h1 class="hero__title">
                         <span class="hero__title-intro">
-                            A little something for
+                            To a beautiful soul named
                         </span>
                         <span class="hero__title-name">Umaamah.</span>
                     </h1>
 
                     <p class="hero__description">
-                        An appreciation of a beautiful soul, her many colours,
-                        and all the lovely things that make her who she is.
+                        A little reminder of how special you are, all the things that make you who you are, and why you're worth celebrating.
                     </p>
 
                     <a href="#letter" class="hero__turn-page">

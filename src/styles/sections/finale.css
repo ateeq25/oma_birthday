@@ -191,3 +191,89 @@
         font-size: 0.8rem;
     }
 }
+
+@keyframes finaleFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finaleImageReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Text content */
+
+.finale__title,
+.finale__message,
+.finale__signature,
+.finale__cta {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.finale__content.is-visible .finale__title {
+    animation: finaleFadeUp 900ms ease forwards;
+}
+
+.finale__content.is-visible .finale__message {
+    animation: finaleFadeUp 900ms ease 150ms forwards;
+}
+
+.finale__content.is-visible .finale__signature {
+    animation: finaleFadeUp 900ms ease 300ms forwards;
+}
+
+.finale__content.is-visible .finale__cta {
+    animation: finaleFadeUp 900ms ease 450ms forwards;
+}
+
+/* Image */
+
+.finale__image {
+    opacity: 0;
+}
+
+.finale__image.is-visible {
+    animation: finaleImageReveal 1200ms ease forwards;
+}
+
+/* Footer */
+
+.finale__footer {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.finale__footer.is-visible {
+    animation: finaleFadeUp 800ms ease forwards;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .finale__title,
+    .finale__message,
+    .finale__signature,
+    .finale__cta,
+    .finale__image,
+    .finale__footer {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}

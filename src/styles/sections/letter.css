@@ -78,8 +78,7 @@
     color: var(--color-secondary);
     font-family: var(--font-display);
     font-size: 7rem;
-    line-height: 0.6;
-    margin-bottom: 2rem;
+    line-height: 0.2;
 }
 
 .letter__content {
@@ -94,11 +93,12 @@
 }
 
 .letter__content .letter__greeting {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: var(--color-primary);
     font-family: "Caveat", cursive;
-    font-size: 2rem;
+    font-size: var(--text-2xl);
     line-height: 1.2;
+    text-align: left;
 }
 
 
@@ -187,7 +187,104 @@
         margin-bottom: 1.5rem;
     }
 
+    .letter__content {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
     .letter__content p {
         font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .letter__content .letter__greeting {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+     .letter__body {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        justify-self: stretch;
+    }
+
+    .letter__content {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        justify-self: stretch;
+    }
+
+      .letter__content .letter__greeting {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .letter__typing-char {
+        display: inline;
+    }
+}
+
+@keyframes letterFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main title */
+.letter__title {
+    opacity: 0;
+}
+
+.letter__title.is-visible {
+    animation: letterFadeUp 900ms ease forwards;
+}
+
+/* Greeting */
+.letter__greeting {
+    opacity: 1;
+}
+
+/* Individual typing characters */
+.letter__typing-char {
+    opacity: 0;
+}
+
+.letter__typing-char.is-visible {
+    opacity: 1;
+}
+
+/* Remaining letter content */
+.letter__body-content {
+    opacity: 0;
+}
+
+.letter__body-content.is-visible {
+    animation: letterFadeUp 900ms ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .letter__title,
+    .letter__body-content {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .letter__typing-char {
+        opacity: 1;
     }
 }
