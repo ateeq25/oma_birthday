@@ -20,7 +20,7 @@ export default function createHero() {
 
                 <div class="hero__nav-links">
                     <a href="#letter">The Letter</a>
-                    <a href="#many-colours">Her Many Colors</a>
+                    <a href="#many-colours">A Superwoman</a>
                     <a href="#wishes">Wishes</a>
                 </div>
             </nav>
@@ -39,7 +39,7 @@ export default function createHero() {
                     </p>
 
                     <a href="#letter" class="hero__turn-page">
-                        TURN THE PAGE
+                        READ ALONG
                         <span aria-hidden="true">↓</span>
                     </a>
                 </div>
